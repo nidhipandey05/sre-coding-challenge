@@ -1,2 +1,2 @@
-# sre-coding-challange
-Public Repo for Altais Coding Challange
+# sre-coding-challenge
+Public Repo for Altais Coding Challenge
