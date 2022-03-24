@@ -1,0 +1,11 @@
+kubernetes:
+  host: https://kubernetes.default
+
+helloworld:
+  namespace: demo
+  image:
+    name: nidhipandey01/hello-world
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    ingressClass: internal-ingress
