@@ -39,6 +39,22 @@ go mod init  github.com/user/repo
 go mod tidy -compat=1.17
 go test -v -run TestTerraformAwsEC2 -timeout 60m
 
+Output:
+TestTerraformAwsEC2 2022-03-24T17:11:01Z logger.go:66: 
+TestTerraformAwsEC2 2022-03-24T17:11:01Z logger.go:66: Apply complete! Resources: 11 added, 0 changed, 0 destroyed.
+TestTerraformAwsEC2 2022-03-24T17:11:01Z logger.go:66: 
+TestTerraformAwsEC2 2022-03-24T17:11:01Z logger.go:66: Outputs:
+TestTerraformAwsEC2 2022-03-24T17:11:01Z logger.go:66: 
+TestTerraformAwsEC2 2022-03-24T17:11:01Z logger.go:66: webserver_instance_type = "t2.micro"
+TestTerraformAwsEC2 2022-03-24T17:11:01Z retry.go:91: terraform [output -no-color -json webserver_instance_type]
+TestTerraformAwsEC2 2022-03-24T17:11:01Z logger.go:66: Running command terraform with args [output -no-color -json webserver_instance_type]
+TestTerraformAwsEC2 2022-03-24T17:11:02Z logger.go:66: "t2.micro"
+=== RUN   TestTerraformAwsEC2/webserver
+--- PASS: TestTerraformAwsEC2 (329.64s)
+    --- PASS: TestTerraformAwsEC2/webserver (0.00s)
+PASS
+ok      github.com/nidhipandeyepam/sre-coding-challenge 330.207s
+
 ```
 
 Basically what this unit test does is checking if the webserver is created with the expected instace type.
@@ -70,10 +86,6 @@ minikube-project nidhi_pandey$ helm list
 |------|--------------|--------------|---------------------------------------|---------------|-----------------------|------------------|
 |helloworld  |    default   |      2      |         2022-03-24 13:57:04.349595 +0000 UTC  |  deployed   |     helloworld-chart-0.1.0 |
 
-
-check that everything defined in the values file is correct:
-
-deployment,sa,hpa,pods
 
 ```
 kubectl get deploy
